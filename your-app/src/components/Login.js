@@ -1,48 +1,49 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { login_start } from "../actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { login_start } from '../actions';
 
 class Login extends Component {
   state = {
-    credentionals: {
-      username: "",
-      password: ""
+    creds: {
+      username: ' ',
+      password: ' '
     }
   };
 
   handleChange = e => {
     this.setState({
-      credentionals: {
-        ...this.state.credentionals,
+      creds: {
+        ...this.state.creds,
         [e.target.name]: e.target.value
       }
     });
   };
 
-  login = e => {
+  login_start = e => {
     e.preventDefault();
-    this.props.login(this.state.credentials);
+    this.props.login_start(this.state.creds);
   };
   render() {
     return (
       <div>
         <h1> Login </h1>
-        <form onSubmit={this.login}>
+        <form onSubmit={this.login_start}>
           <input
-            placeholder="Username"
-            type="text"
-            name="username"
-            value={this.state.credentionals}
-            onechange={this.handleChange}
+            placeholder='Username'
+            type='text'
+            name='username'
+            value={this.state.creds.username}
+            onChange={this.handleChange}
           />
           <input
-            placeholder="Password"
-            type="password"
-            value={this.state.credentionals}
-            onechange={this.handleChange}
+            placeholder='Password'
+            type='password'
+            name='password'
+            value={this.state.creds.password}
+            onChange={this.handleChange}
           />
+          <button>Login</button>
         </form>
-        <button type="onSubmit"> Login</button>
       </div>
     );
   }
