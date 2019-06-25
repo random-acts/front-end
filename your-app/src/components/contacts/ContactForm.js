@@ -4,43 +4,37 @@ import { connect } from 'react-redux';
 
 class ContactForm extends React.Component {
   state = {
-    firstName: '',
-    age: ''
+    name: {
+      first: '',
+      last: ''
+    }
   };
-
-  addContact() {
-    console.log('adding contact');
-  }
-
-  getContacts() {
-    console.log('getting contact');
-  }
 
   componentDidMount() {
     // this.props.getContacts();
-    this.getContacts();
   }
 
   handleChanges = e => {
     e.preventDefault();
     this.setState({
+      ...this.state.creds,
       [e.target.name]: e.target.value
     });
   };
 
   addContact = e => {
     e.preventDefault();
-    const newFriend = {
-      name: this.state.name,
-      age: this.state.age,
-      email: this.state.email
+    const newContact = {
+      first: this.state.name.first,
+      last: this.state.name.last
     };
 
-    this.props.addContact(newFriend);
+    this.props.addContact(newContact);
     this.setState({
-      name: '',
-      age: '',
-      email: ''
+      name: {
+        first: '',
+        last: ''
+      }
     });
   };
 
