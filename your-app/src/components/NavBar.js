@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #3884ff;
-
   font-size: 1.4rem;
   filter: drop-shadow(1px 2px 4px black);
 `;
@@ -17,7 +16,6 @@ const MainNav = styled.nav`
   width: 1000px;
   display: flex;
   justify-content: space-evenly;
-
   a {
     text-decoration: none;
     padding: 2% 0%;
@@ -44,26 +42,16 @@ export default function Navigation() {
     <Wrapper>
       <MainNav>
         <HomeWrapper>
-<<<<<<< HEAD
-          <NavLink to="/">
+          <NavLink to="/protected">
             <i className="fas fa-home" />
-=======
-          <NavLink to='/protected'>
-            <i className='fas fa-home' />
->>>>>>> f42da7d86394af14498ac12006f10c21bf475234
           </NavLink>
         </HomeWrapper>
 
         <SecondaryWrap>
-<<<<<<< HEAD
-          <NavLink
-            to="/contacts"
-=======
           {/* <NavLink
             to='/contacts'
->>>>>>> f42da7d86394af14498ac12006f10c21bf475234
             activeStyle={{
-              textDecoration: "underline"
+              textDecoration: 'underline'
             }}
           >
             Contact

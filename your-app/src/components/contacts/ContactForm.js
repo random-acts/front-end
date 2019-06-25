@@ -4,27 +4,12 @@ import { connect } from "react-redux";
 
 class ContactForm extends React.Component {
   state = {
-<<<<<<< HEAD
-    firstName: "",
-    age: ""
-  };
-
-  addContact() {
-    console.log("adding contact");
-  }
-
-  getContacts() {
-    console.log("getting contact");
-  }
-
-=======
     name: {
-      first: '',
-      last: ''
+      first: "",
+      last: ""
     }
   };
 
->>>>>>> f42da7d86394af14498ac12006f10c21bf475234
   componentDidMount() {
     // this.props.getContacts();
   }
@@ -46,16 +31,10 @@ class ContactForm extends React.Component {
 
     this.props.addContact(newContact);
     this.setState({
-<<<<<<< HEAD
-      name: "",
-      age: "",
-      email: ""
-=======
       name: {
-        first: '',
-        last: ''
+        first: "",
+        last: ""
       }
->>>>>>> f42da7d86394af14498ac12006f10c21bf475234
     });
   };
 
