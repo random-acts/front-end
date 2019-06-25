@@ -5,8 +5,8 @@ import { login_start } from '../actions';
 class Login extends Component {
   state = {
     creds: {
-      username: ' ',
-      password: ' '
+      username: '',
+      password: ''
     }
   };
 
