@@ -44,20 +44,20 @@ export default function Navigation() {
     <Wrapper>
       <MainNav>
         <HomeWrapper>
-          <NavLink to='/'>
+          <NavLink to='/protected'>
             <i className='fas fa-home' />
           </NavLink>
         </HomeWrapper>
 
         <SecondaryWrap>
-          <NavLink
+          {/* <NavLink
             to='/contacts'
             activeStyle={{
               textDecoration: 'underline'
             }}
           >
             Contact
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             to='/login'

@@ -5,7 +5,7 @@ import store from './Store';
 import Login from './components/Login';
 import Navigation from './components/NavBar';
 import Home from './components/Home';
-import PrivateRoute from './components/Home';
+import PrivateRoute from './components/PrivateRoute';
 import GlobalStyle from './GlobalStyle';
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       <Router>
         <div className='App'>
           <Navigation />
-          <Route path='/login' component={Login} />
-          <PrivateRoute exact path='/protected' component={Home} />
+          <Route path='/login' render={props => <Login {...props} />} />
+          <PrivateRoute path='/protected' component={Home} />
         </div>
       </Router>
     </Provider>
