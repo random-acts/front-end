@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -44,25 +44,25 @@ export default function Navigation() {
     <Wrapper>
       <MainNav>
         <HomeWrapper>
-          <NavLink to='/'>
-            <i className='fas fa-home' />
+          <NavLink to="/">
+            <i className="fas fa-home" />
           </NavLink>
         </HomeWrapper>
 
         <SecondaryWrap>
           <NavLink
-            to='/contacts'
+            to="/contacts"
             activeStyle={{
-              textDecoration: 'underline'
+              textDecoration: "underline"
             }}
           >
             Contact
           </NavLink>
 
           <NavLink
-            to='/login'
+            to="/login"
             activeStyle={{
-              textDecoration: 'underline'
+              textDecoration: "underline"
             }}
           >
             login
