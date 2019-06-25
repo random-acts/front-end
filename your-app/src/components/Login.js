@@ -26,6 +26,12 @@ class Login extends Component {
     });
   };
   render() {
+    // maybe better to add loggedIn to state
+    // rather than checking token here?
+    // if logged in do not display login form
+    if (localStorage.getItem('token')) {
+      return <h1>You're logged in!</h1>;
+    }
     return (
       <div>
         <h1> Login </h1>
