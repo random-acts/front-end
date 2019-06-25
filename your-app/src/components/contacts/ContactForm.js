@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 class ContactForm extends React.Component {
   state = {
+<<<<<<< HEAD
     firstName: "",
     age: ""
   };
@@ -16,31 +17,45 @@ class ContactForm extends React.Component {
     console.log("getting contact");
   }
 
+=======
+    name: {
+      first: '',
+      last: ''
+    }
+  };
+
+>>>>>>> f42da7d86394af14498ac12006f10c21bf475234
   componentDidMount() {
     // this.props.getContacts();
-    this.getContacts();
   }
 
   handleChanges = e => {
     e.preventDefault();
     this.setState({
+      ...this.state.creds,
       [e.target.name]: e.target.value
     });
   };
 
   addContact = e => {
     e.preventDefault();
-    const newFriend = {
-      name: this.state.name,
-      age: this.state.age,
-      email: this.state.email
+    const newContact = {
+      first: this.state.name.first,
+      last: this.state.name.last
     };
 
-    this.props.addContact(newFriend);
+    this.props.addContact(newContact);
     this.setState({
+<<<<<<< HEAD
       name: "",
       age: "",
       email: ""
+=======
+      name: {
+        first: '',
+        last: ''
+      }
+>>>>>>> f42da7d86394af14498ac12006f10c21bf475234
     });
   };
 
