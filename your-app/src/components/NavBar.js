@@ -65,7 +65,7 @@ export default function Navigation() {
               textDecoration: 'underline'
             }}
           >
-            login
+            Login <i className='fas fa-sign-in-alt' />
           </NavLink>
         </SecondaryWrap>
       </MainNav>
