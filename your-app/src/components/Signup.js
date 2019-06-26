@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { sign_up } from '../actions/index';
-import styled from 'styled-components';
+import React from "react";
+import { connect } from "react-redux";
+import { sign_up } from "../actions/index";
+import styled from "styled-components";
 const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@ const OuterContainer = styled.div`
 `;
 const InnerContainer = styled.div`
   h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 3rem;
     text-align: center;
     margin: 3% 0%;
@@ -29,7 +29,7 @@ const InnerContainer = styled.div`
       margin-top: 12%;
       font-size: 1.3rem;
       padding: 10px 30px;
-      background-color: #3884ff;
+      background-color: #52a577;
       border-radius: 10px;
       border: unset;
       color: #fff;
@@ -42,8 +42,8 @@ const InnerContainer = styled.div`
 class Signup extends React.Component {
   state = {
     creds: {
-      userName: '',
-      password: ''
+      userName: "",
+      password: ""
     }
   };
   handleChanges = e => {
@@ -57,7 +57,7 @@ class Signup extends React.Component {
   userSignup = e => {
     e.preventDefault();
     this.props.sign_up(this.state.creds);
-    this.props.history.push('/Login');
+    this.props.history.push("/Login");
   };
   render() {
     return (
@@ -66,17 +66,17 @@ class Signup extends React.Component {
           <h1> Register </h1>
           <form onSubmit={this.userSignup}>
             <input
-              type='text'
-              name='userName'
+              type="text"
+              name="userName"
               value={this.state.creds.userName}
-              placeholder='UserName'
+              placeholder="UserName"
               onChange={this.handleChanges}
             />
             <input
-              type='text'
-              name='password'
+              type="text"
+              name="password"
               value={this.state.creds.password}
-              placeholder='Password'
+              placeholder="Password"
               onChange={this.handleChanges}
             />
             <button onClick={this.userSignup}>Sign Up</button>
