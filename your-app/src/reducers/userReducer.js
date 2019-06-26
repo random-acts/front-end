@@ -8,14 +8,15 @@ import {
   FETCH_ACTS_START,
   FETCH_ACTS_SUCCESS,
   FETCH_ACTS_FAIL
-} from '../actions';
+} from "../actions";
 
 const defaultState = {
+  rdmActs: null,
   logginIn: false,
   error: null,
   loading: false,
   signUp: false,
-  token: localStorage.getItem('token')
+  token: localStorage.getItem("token")
 };
 export const reducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -30,7 +31,7 @@ export const reducer = (state = defaultState, action) => {
         ...state,
         loggingIn: false,
         error: false,
-        token: localStorage.getItem('token')
+        token: localStorage.getItem("token")
       };
     case LOGIN_FAIL:
       return {
@@ -68,6 +69,7 @@ export const reducer = (state = defaultState, action) => {
     case FETCH_ACTS_SUCCESS:
       return {
         ...state,
+        rdmActs: action.payload,
         loading: false,
         error: false
       };

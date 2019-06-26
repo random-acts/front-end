@@ -1,5 +1,5 @@
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import Axios from "axios";
+import axios from "axios";
 export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
@@ -42,9 +42,10 @@ export const sign_up = newUser => dispatch => {
     });
 };
 //----------------- fetch_start action container----------------
-export const fetch_start = data => dispatch => {
+export const fetch_start = () => dispatch => {
   dispatch({ type: FETCH_ACTS_START });
-  Axios.get("https://random-act-app.herokuapp.com/api", data)
+  axios
+    .get("https://random-act-app.herokuapp.com/api")
     .then(res => {
       dispatch({ type: FETCH_ACTS_SUCCESS, payload: res.data });
     })
