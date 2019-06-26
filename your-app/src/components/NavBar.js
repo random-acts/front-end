@@ -16,7 +16,6 @@ const MainNav = styled.nav`
   width: 1000px;
   display: flex;
   justify-content: space-evenly;
-
   a {
     text-decoration: none;
     padding: 2% 0%;

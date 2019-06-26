@@ -14,7 +14,6 @@ const Wrapper = styled.div`
     word-spacing: 36px;
     letter-spacing: 11px;
   }
-
   button {
     width: 500px;
     margin-top: 4%;

@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { login_start } from "../actions";
 import styled from "styled-components";
-
 const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 `;
-
 const InnerContainer = styled.div`
   h1 {
     font-family: "Orbitron", sans-serif;
@@ -20,16 +18,13 @@ const InnerContainer = styled.div`
     letter-spacing: 11px;
     margin-top: 12%;
   }
-
   form {
     display: flex;
     flex-direction: column;
-
     input {
       font-size: 1.3rem;
       margin-top: 4%;
     }
-
     button {
       margin-top: 12%;
       font-size: 1.3rem;
@@ -37,7 +32,6 @@ const InnerContainer = styled.div`
       background-color: #3884ff;
       border-radius: 10px;
       border: unset;
-
       color: #fff;
       text-transform: uppercase;
       box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.4);
@@ -61,7 +55,6 @@ class Login extends Component {
       password: ""
     }
   };
-
   handleChange = e => {
     this.setState({
       creds: {
@@ -70,7 +63,6 @@ class Login extends Component {
       }
     });
   };
-
   login_start = e => {
     e.preventDefault();
     this.props.login_start(this.state.creds).then(() => {
@@ -110,12 +102,10 @@ class Login extends Component {
     );
   }
 }
-
 const mstp = state => ({
   error: state.error,
   loggingIn: state.loggingIn
 });
-
 export default connect(
   mstp,
   { login_start }
