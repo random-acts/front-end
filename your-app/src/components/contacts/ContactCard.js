@@ -23,10 +23,16 @@ const Card = styled.div`
   }
 `;
 
-const ContactCard = ({ contact, deleteContact, setCurrent }) => {
+const ContactCard = props => {
+  const { contact, deleteContact, setCurrent } = props;
   const onDelete = () => {
     deleteContact(contact.id);
     alert('contact deleted');
+  };
+
+  const onClickHandle = contact => {
+    setCurrent(contact);
+    props.history.push('/update');
   };
 
   return (
@@ -34,7 +40,7 @@ const ContactCard = ({ contact, deleteContact, setCurrent }) => {
       <p>
         {contact.firstName} {contact.lastName}
         <button onClick={onDelete}>x</button>
-        <button onClick={() => setCurrent(contact)}>edit</button>
+        <button onClick={e => onClickHandle(contact)}>edit</button>
       </p>
     </Card>
   );

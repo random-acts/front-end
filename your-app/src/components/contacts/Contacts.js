@@ -20,10 +20,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const Contacts = ({ contact: { contacts, loading }, getContacts }) => {
+const Contacts = props => {
+  const {
+    contact: { contacts, loading },
+    getContacts
+  } = props;
   useEffect(() => {
     getContacts();
-    // eslint-disable-nect-line
+    // eslint-disable-next-line
   }, [getContacts]);
 
   if (loading || contacts === null) {
@@ -38,7 +42,11 @@ const Contacts = ({ contact: { contacts, loading }, getContacts }) => {
         <p>no contacts...</p>
       ) : (
         contacts.map(contact => (
-          <ContactCard contact={contact} key={contact.id} />
+          <ContactCard
+            contact={contact}
+            key={contact.id}
+            history={props.history}
+          />
         ))
       )}
     </Wrapper>

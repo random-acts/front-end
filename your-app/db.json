@@ -11,9 +11,19 @@
       "lastName": "Santana"
     },
     {
-      "id": 3,
-      "firstName": "Jake",
-      "lastName": "Thomas"
+      "firstName": "Josh",
+      "lastName": "Keslar",
+      "id": 4
+    },
+    {
+      "firstName": "Shelby",
+      "lastName": "Diamond",
+      "id": 5
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "id": 6
     }
   ],
   "acts": [

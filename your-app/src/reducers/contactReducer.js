@@ -12,7 +12,8 @@ import {
 const initialState = {
   contacts: null,
   loading: false,
-  error: null
+  error: null,
+  current: null
 };
 
 export default (state = initialState, action) => {

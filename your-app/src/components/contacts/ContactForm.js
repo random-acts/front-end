@@ -49,7 +49,7 @@ const ContactForm = ({ addContact }) => {
   const handleSubmit = e => {
     e.preventDefault();
     addContact(formData);
-    console.log(formData);
+
     setFormData({});
   };
 
