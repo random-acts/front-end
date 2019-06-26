@@ -1,12 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { login_start } from "../actions";
+import { sign_up } from "../actions/index";
 import styled from "styled-components";
+
 const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 `;
+
 const InnerContainer = styled.div`
   h1 {
     font-family: "Orbitron", sans-serif;
@@ -29,7 +31,7 @@ const InnerContainer = styled.div`
       margin-top: 12%;
       font-size: 1.3rem;
       padding: 10px 30px;
-      background-color: #52a577;
+      background-color: #3884ff;
       border-radius: 10px;
       border: unset;
       color: #fff;
@@ -40,22 +42,15 @@ const InnerContainer = styled.div`
   }
 `;
 
-const LoginStatus = styled.h1`
-  margin: 80px;
-  display: flex;
-  justify-content: center;
-  font-family: "Orbitron", sans-serif;
-  font-size: 3rem;
-`;
-
-class Login extends Component {
+class Signup extends React.Component {
   state = {
     creds: {
-      username: "",
+      userName: "",
       password: ""
     }
   };
-  handleChange = e => {
+
+  handleChanges = e => {
     this.setState({
       creds: {
         ...this.state.creds,
@@ -63,50 +58,41 @@ class Login extends Component {
       }
     });
   };
-  login_start = e => {
+  userSignup = e => {
     e.preventDefault();
-    this.props.login_start(this.state.creds).then(() => {
-      this.props.history.push("/protected");
-    });
+    this.props.sign_up(this.state.creds);
+    this.props.history.push("/Login");
   };
+
   render() {
-    // maybe better to add loggedIn to state
-    // rather than checking token here?
-    // if logged in do not display login form
-    if (localStorage.getItem("token")) {
-      return <LoginStatus>You're logged in!</LoginStatus>;
-    }
     return (
       <OuterContainer>
         <InnerContainer>
-          <h1> Login </h1>
-          <form onSubmit={this.login_start}>
+          <h1> Register </h1>
+          <form onSubmit={this.userSignup}>
             <input
-              placeholder="Username"
               type="text"
-              name="username"
-              value={this.state.creds.username}
-              onChange={this.handleChange}
+              name="userName"
+              value={this.state.creds.userName}
+              placeholder="UserName"
+              onChange={this.handleChanges}
             />
             <input
-              placeholder="Password"
               type="text"
               name="password"
               value={this.state.creds.password}
-              onChange={this.handleChange}
+              placeholder="Password"
+              onChange={this.handleChanges}
             />
-            <button>Submit</button>
+            <button onClick={this.userSignup}>Sign Up</button>
           </form>
         </InnerContainer>
       </OuterContainer>
     );
   }
 }
-const mstp = state => ({
-  error: state.error,
-  loggingIn: state.loggingIn
-});
+
 export default connect(
-  mstp,
-  { login_start }
-)(Login);
+  null,
+  { sign_up }
+)(Signup);

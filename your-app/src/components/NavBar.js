@@ -17,7 +17,6 @@ const MainNav = styled.nav`
   width: 1000px;
   display: flex;
   justify-content: space-evenly;
-
   a {
     text-decoration: none;
     padding: 2% 0%;
@@ -27,8 +26,9 @@ const MainNav = styled.nav`
 `;
 
 const HomeWrapper = styled.div`
-  width: 60%;
+  width: 40%;
   display: flex;
+  justify-content: space-evenly;
 `;
 
 const SecondaryWrap = styled.div`
@@ -64,6 +64,15 @@ export default function Navigation() {
             }}
           >
             Login <i className='fas fa-sign-in-alt' />
+          </NavLink>
+
+          <NavLink
+            to='/register'
+            activeStyle={{
+              textDecoration: 'underline'
+            }}
+          >
+            SignUp
           </NavLink>
         </SecondaryWrap>
       </MainNav>

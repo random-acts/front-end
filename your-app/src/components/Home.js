@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
@@ -7,14 +7,13 @@ const Wrapper = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   align-content: center;
   h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-size: 3rem;
     margin: 3% 0%;
     text-transform: uppercase;
     word-spacing: 36px;
     letter-spacing: 11px;
   }
-
   button {
     width: 500px;
     margin-top: 4%;
