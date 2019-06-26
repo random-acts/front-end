@@ -34,7 +34,7 @@ const InnerContainer = styled.div`
       margin-top: 12%;
       font-size: 1.3rem;
       padding: 10px 30px;
-      background-color: #3884ff;
+      background-color: #52a577;
       border-radius: 10px;
       border: unset;
 

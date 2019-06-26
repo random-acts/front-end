@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Navigation from './components/NavBar';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
+import Contacts from './components/contacts/Contacts';
 import GlobalStyle from './GlobalStyle';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <div className='App'>
           <Navigation />
           <Route path='/login' render={props => <Login {...props} />} />
+          <Route path='/contacts' component={Contacts} />
           <PrivateRoute path='/protected' component={Home} />
         </div>
       </Router>

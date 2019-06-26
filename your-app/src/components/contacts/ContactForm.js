@@ -1,77 +1,82 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
-// import { getContacts, addContact } from '../actions';
+import { addContact } from '../../actions/contactActions';
 
-class ContactForm extends React.Component {
-  state = {
-    name: {
-      first: '',
-      last: ''
+const Wrapper = styled.div`
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      font-size: 1.3rem;
+      margin-top: 4%;
     }
-  };
 
-  componentDidMount() {
-    // this.props.getContacts();
+    button {
+      margin-top: 12%;
+      font-size: 1.3rem;
+      padding: 10px 30px;
+      background-color: #52a577;
+      border-radius: 10px;
+      border: unset;
+
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
   }
+`;
 
-  handleChanges = e => {
-    e.preventDefault();
-    this.setState({
-      ...this.state.creds,
-      [e.target.name]: e.target.value
+const ContactForm = ({ addContact }) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: ''
+  });
+
+  console.log(formData);
+
+  const updateFormData = event => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
     });
   };
 
-  addContact = e => {
-    e.preventDefault();
-    const newContact = {
-      first: this.state.name.first,
-      last: this.state.name.last
-    };
+  const { firstName, lastName } = formData;
 
-    this.props.addContact(newContact);
-    this.setState({
-      name: {
-        first: '',
-        last: ''
-      }
-    });
+  const handleSubmit = e => {
+    e.preventDefault();
+    addContact(formData);
+    console.log(formData);
+    setFormData({});
   };
 
-  render() {
-    return (
-      <div>
-        <form>
-          <input
-            placeholder='First Name'
-            name='firstName'
-            value={this.state.firstName}
-            onChange={this.handleChanges}
-            required
-          />
-          <input
-            placeholder='Last Name'
-            name='lastName'
-            value={this.state.lastName}
-            onChange={this.handleChanges}
-            required
-          />
-          <button onClick={this.addContact}>Add a contact</button>
-        </form>
-      </div>
-    );
-  }
-}
-
-const mstp = state => ({
-  contacts: state.contacts,
-  loading: state.loading
-});
+  return (
+    <Wrapper>
+      <form onSubmit={handleSubmit}>
+        <input
+          placeholder='First Name'
+          name='firstName'
+          value={firstName || ''}
+          onChange={e => updateFormData(e)}
+          required
+        />
+        <input
+          placeholder='Last Name'
+          name='lastName'
+          value={lastName || ''}
+          onChange={e => updateFormData(e)}
+          required
+        />
+        <button>Add a contact</button>
+      </form>
+    </Wrapper>
+  );
+};
 
 export default connect(
-  mstp,
-  {
-    // getContacts,
-    // addContact
-  }
+  null,
+  { addContact }
 )(ContactForm);

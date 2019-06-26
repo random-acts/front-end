@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #3884ff;
+  background-color: #52a577;
 
   font-size: 1.4rem;
   filter: drop-shadow(1px 2px 4px black);
@@ -37,8 +37,6 @@ const SecondaryWrap = styled.div`
   justify-content: space-evenly;
 `;
 
-const LinksButton = styled(NavLink)``;
-
 export default function Navigation() {
   return (
     <Wrapper>
@@ -50,14 +48,14 @@ export default function Navigation() {
         </HomeWrapper>
 
         <SecondaryWrap>
-          {/* <NavLink
+          <NavLink
             to='/contacts'
             activeStyle={{
               textDecoration: 'underline'
             }}
           >
-            Contact
-          </NavLink> */}
+            Contacts
+          </NavLink>
 
           <NavLink
             to='/login'
