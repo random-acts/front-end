@@ -3,7 +3,10 @@ import {
   GET_CONTACTS,
   CONTACTS_ERROR,
   ADD_CONTACT,
-  DELETE_CONTACT
+  DELETE_CONTACT,
+  UPDATE_CONTACT,
+  SET_CURRENT_CONTACT,
+  CLEAR_CURRENT_CONTACT
 } from '../actions/contactActions';
 
 const initialState = {
@@ -33,6 +36,23 @@ export default (state = initialState, action) => {
           contact => contact.id !== action.payload
         ),
         loading: false
+      };
+    case SET_CURRENT_CONTACT:
+      return {
+        ...state,
+        current: action.payload
+      };
+    case CLEAR_CURRENT_CONTACT:
+      return {
+        ...state,
+        current: null
+      };
+    case UPDATE_CONTACT:
+      return {
+        ...state,
+        contacts: state.contacts.map(contact =>
+          contact.id === action.payload.id ? action.payload : contact
+        )
       };
     case SET_LOADING:
       return {

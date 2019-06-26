@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { deleteContact } from '../../actions/contactActions';
+import { deleteContact, setCurrent } from '../../actions/contactActions';
 
 const Card = styled.div`
   font-family: Arial, Helvetica, sans-serif;
@@ -23,7 +23,7 @@ const Card = styled.div`
   }
 `;
 
-const ContactCard = ({ contact, deleteContact }) => {
+const ContactCard = ({ contact, deleteContact, setCurrent }) => {
   const onDelete = () => {
     deleteContact(contact.id);
     alert('contact deleted');
@@ -34,6 +34,7 @@ const ContactCard = ({ contact, deleteContact }) => {
       <p>
         {contact.firstName} {contact.lastName}
         <button onClick={onDelete}>x</button>
+        <button onClick={() => setCurrent(contact)}>edit</button>
       </p>
     </Card>
   );
@@ -41,5 +42,5 @@ const ContactCard = ({ contact, deleteContact }) => {
 
 export default connect(
   null,
-  { deleteContact }
+  { deleteContact, setCurrent }
 )(ContactCard);
