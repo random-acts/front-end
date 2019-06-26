@@ -15,6 +15,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <div className="App">
+          <div>Hello Netlify</div>
           <Navigation />
           <Route path="/login" render={props => <Login {...props} />} />
           <Route path="/register" component={Signup} />
