@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+import { combineReducers } from 'redux';
+import userReducer from './userReducer';
+import contactReducer from './contactReducer';
+
+export default combineReducers({
+  user: userReducer,
+  contact: contactReducer
+});
+=======
 import {
   LOGIN_START,
   LOGIN_SUCCESS,
@@ -82,3 +92,4 @@ export const reducer = (state = defaultState, action) => {
   }
 };
 export default reducer;
+>>>>>>> 133c0add964acb58bfe62ce99192253c2892e72c

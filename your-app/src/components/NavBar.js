@@ -1,13 +1,14 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #3884ff;
+  background-color: #52a577;
+
   font-size: 1.4rem;
   filter: drop-shadow(1px 2px 4px black);
 `;
@@ -41,34 +42,34 @@ export default function Navigation() {
     <Wrapper>
       <MainNav>
         <HomeWrapper>
-          <NavLink to="/protected">
-            <i className="fas fa-home" />
+          <NavLink to='/protected'>
+            <i className='fas fa-home' />
           </NavLink>
         </HomeWrapper>
 
         <SecondaryWrap>
-          {/* <NavLink
+          <NavLink
             to='/contacts'
             activeStyle={{
               textDecoration: 'underline'
             }}
           >
-            Contact
-          </NavLink> */}
-
-          <NavLink
-            to="/login"
-            activeStyle={{
-              textDecoration: "underline"
-            }}
-          >
-            Login <i className="fas fa-sign-in-alt" />
+            Contacts
           </NavLink>
 
           <NavLink
-            to="/register"
+            to='/login'
             activeStyle={{
-              textDecoration: "underline"
+              textDecoration: 'underline'
+            }}
+          >
+            Login <i className='fas fa-sign-in-alt' />
+          </NavLink>
+
+          <NavLink
+            to='/register'
+            activeStyle={{
+              textDecoration: 'underline'
             }}
           >
             SignUp

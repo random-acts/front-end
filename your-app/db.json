@@ -1,0 +1,43 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstName": "Andrew",
+      "lastName": "Brudnak"
+    },
+    {
+      "id": 2,
+      "firstName": "Carlos",
+      "lastName": "Santana"
+    },
+    {
+      "id": 3,
+      "firstName": "Jake",
+      "lastName": "Thomas"
+    },
+    {
+      "firstName": "Shelby",
+      "lastName": "Diamond",
+      "id": 4
+    },
+    {
+      "firstName": "Some",
+      "lastName": "Guy",
+      "id": 5
+    }
+  ],
+  "acts": [
+    {
+      "id": 1,
+      "act": "Take them out to lunch"
+    },
+    {
+      "id": 2,
+      "act": "Let them know they're appreciated"
+    },
+    {
+      "id": 3,
+      "act": "Drop off a fully prepared dinner"
+    }
+  ]
+}
