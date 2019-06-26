@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #3884ff;
-
   font-size: 1.4rem;
   filter: drop-shadow(1px 2px 4px black);
 `;
@@ -27,8 +26,9 @@ const MainNav = styled.nav`
 `;
 
 const HomeWrapper = styled.div`
-  width: 60%;
+  width: 40%;
   display: flex;
+  justify-content: space-evenly;
 `;
 
 const SecondaryWrap = styled.div`
@@ -37,15 +37,13 @@ const SecondaryWrap = styled.div`
   justify-content: space-evenly;
 `;
 
-const LinksButton = styled(NavLink)``;
-
 export default function Navigation() {
   return (
     <Wrapper>
       <MainNav>
         <HomeWrapper>
-          <NavLink to='/protected'>
-            <i className='fas fa-home' />
+          <NavLink to="/protected">
+            <i className="fas fa-home" />
           </NavLink>
         </HomeWrapper>
 
@@ -60,12 +58,21 @@ export default function Navigation() {
           </NavLink> */}
 
           <NavLink
-            to='/login'
+            to="/login"
             activeStyle={{
-              textDecoration: 'underline'
+              textDecoration: "underline"
             }}
           >
-            Login <i className='fas fa-sign-in-alt' />
+            Login <i className="fas fa-sign-in-alt" />
+          </NavLink>
+
+          <NavLink
+            to="/register"
+            activeStyle={{
+              textDecoration: "underline"
+            }}
+          >
+            SignUp
           </NavLink>
         </SecondaryWrap>
       </MainNav>
