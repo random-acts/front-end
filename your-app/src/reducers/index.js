@@ -35,6 +35,10 @@ export const reducer = (state = defaultState, action) => {
         loggingIn: false,
         error: action.payload
       };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 462f61f3c09189d94eee092f5887782406d2f3b5
     case SIGNUP_START:
       return {
         ...state,
@@ -49,6 +53,7 @@ export const reducer = (state = defaultState, action) => {
         signUp: false,
         token: action.payload
       };
+<<<<<<< HEAD
     case SIGNUP_FAIL:
       return {
         ...state,
@@ -56,6 +61,9 @@ export const reducer = (state = defaultState, action) => {
         signup: false,
         error: action.payload
       };
+=======
+
+>>>>>>> 462f61f3c09189d94eee092f5887782406d2f3b5
     default:
       return state;
   }

@@ -1,12 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 // import { getContacts, addContact } from '../actions';
 
 class ContactForm extends React.Component {
   state = {
     name: {
-      first: '',
-      last: ''
+      first: "",
+      last: ""
     }
   };
 
@@ -32,8 +32,8 @@ class ContactForm extends React.Component {
     this.props.addContact(newContact);
     this.setState({
       name: {
-        first: '',
-        last: ''
+        first: "",
+        last: ""
       }
     });
   };
@@ -43,15 +43,15 @@ class ContactForm extends React.Component {
       <div>
         <form>
           <input
-            placeholder='First Name'
-            name='firstName'
+            placeholder="First Name"
+            name="firstName"
             value={this.state.firstName}
             onChange={this.handleChanges}
             required
           />
           <input
-            placeholder='Last Name'
-            name='lastName'
+            placeholder="Last Name"
+            name="lastName"
             value={this.state.lastName}
             onChange={this.handleChanges}
             required
