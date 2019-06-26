@@ -4,13 +4,16 @@ import {
   LOGIN_FAIL,
   SIGNUP_START,
   SIGNUP_SUCCESS,
-  SIGNUP_FAIL
+  SIGNUP_FAIL,
+  FETCH_ACTS_START,
+  FETCH_ACTS_SUCCESS,
+  FETCH_ACTS_FAIL
 } from "../actions";
 
 const defaultState = {
   logginIn: false,
   error: null,
-  loading: true,
+  loading: false,
   signUp: false,
   token: localStorage.getItem("token")
 };
@@ -54,6 +57,24 @@ export const reducer = (state = defaultState, action) => {
         ...state,
         loading: false,
         signup: false,
+        error: action.payload
+      };
+    case FETCH_ACTS_START:
+      return {
+        ...state,
+        loading: true,
+        error: false
+      };
+    case FETCH_ACTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: false
+      };
+    case FETCH_ACTS_FAIL:
+      return {
+        ...state,
+        loading: false,
         error: action.payload
       };
     default:
