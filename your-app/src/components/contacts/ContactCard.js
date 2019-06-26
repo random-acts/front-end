@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { deleteContact } from '../../actions/contactActions';
 
 const Card = styled.div`
   font-family: Arial, Helvetica, sans-serif;
@@ -21,14 +23,23 @@ const Card = styled.div`
   }
 `;
 
-const ContactCard = ({ contact }) => {
+const ContactCard = ({ contact, deleteContact }) => {
+  const onDelete = () => {
+    deleteContact(contact.id);
+    alert('contact deleted');
+  };
+
   return (
     <Card>
       <p>
         {contact.firstName} {contact.lastName}
+        <button onClick={onDelete}>x</button>
       </p>
     </Card>
   );
 };
 
-export default ContactCard;
+export default connect(
+  null,
+  { deleteContact }
+)(ContactCard);

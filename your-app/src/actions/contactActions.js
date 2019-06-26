@@ -2,7 +2,9 @@ export const SET_LOADING = 'SET_LOADING';
 export const GET_CONTACTS = 'GET_CONTACTS';
 export const CONTACTS_ERROR = 'CONTACTS_ERROR';
 export const ADD_CONTACT = 'ADD_CONTACT';
+export const DELETE_CONTACT = 'DELETE_CONTACT';
 
+// Get all of the contacts
 export const getContacts = () => async dispatch => {
   try {
     setLoading();
@@ -22,6 +24,7 @@ export const getContacts = () => async dispatch => {
   }
 };
 
+// Add a contact to the list
 export const addContact = contact => async dispatch => {
   try {
     setLoading();
@@ -43,6 +46,27 @@ export const addContact = contact => async dispatch => {
     dispatch({
       type: CONTACTS_ERROR,
       payload: error.response.data
+    });
+  }
+};
+
+// Delete a contact from the server
+export const deleteContact = id => async dispatch => {
+  try {
+    setLoading();
+
+    await fetch(`/contacts/${id}`, {
+      method: 'DELETE'
+    });
+
+    dispatch({
+      type: DELETE_CONTACT,
+      payload: id
+    });
+  } catch (error) {
+    dispatch({
+      type: CONTACTS_ERROR,
+      payload: error
     });
   }
 };

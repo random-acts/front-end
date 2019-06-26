@@ -14,21 +14,6 @@
       "id": 3,
       "firstName": "Jake",
       "lastName": "Thomas"
-    },
-    {
-      "firstName": "Shelby",
-      "lastName": "Diamond",
-      "id": 4
-    },
-    {
-      "firstName": "Some",
-      "lastName": "Guy",
-      "id": 5
-    },
-    {
-      "firstName": "Ruby",
-      "lastName": "Brudnak",
-      "id": 6
     }
   ],
   "acts": [
