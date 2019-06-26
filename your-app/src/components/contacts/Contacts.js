@@ -24,7 +24,7 @@ const Contacts = ({ contact: { contacts, loading }, getContacts }) => {
   useEffect(() => {
     getContacts();
     // eslint-disable-nect-line
-  }, []);
+  }, [getContacts]);
 
   if (loading || contacts === null) {
     return <h2>Loading contacts...</h2>;

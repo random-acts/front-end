@@ -24,6 +24,11 @@
       "firstName": "Some",
       "lastName": "Guy",
       "id": 5
+    },
+    {
+      "firstName": "Ruby",
+      "lastName": "Brudnak",
+      "id": 6
     }
   ],
   "acts": [

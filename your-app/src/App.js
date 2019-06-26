@@ -8,6 +8,7 @@ import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
 import Contacts from './components/contacts/Contacts';
 import GlobalStyle from './GlobalStyle';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Navigation />
           <Route path='/login' render={props => <Login {...props} />} />
           <Route path='/contacts' component={Contacts} />
+          <Route path='/register' component={Signup} />
           <PrivateRoute path='/protected' component={Home} />
         </div>
       </Router>
