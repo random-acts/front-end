@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { fetch_start } from '../actions/index';
 import { getContacts } from '../actions/contactActions';
+import { getActs } from '../actions/actActions';
 
 const Wrapper = styled.div`
   display: flex;
@@ -55,6 +56,12 @@ const Home = props => {
     // eslint-disable-next-line
   }, [getContacts]);
 
+  const { getActs } = props;
+  useEffect(() => {
+    getActs();
+    // eslint-disable-next-line
+  }, [getActs]);
+
   const fetchAct = e => {
     e.preventDefault();
     props.fetch_start();
@@ -80,5 +87,5 @@ const mstp = state => ({
 
 export default connect(
   mstp,
-  { fetch_start, getContacts }
+  { fetch_start, getContacts, getActs }
 )(Home);
