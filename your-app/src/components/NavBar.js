@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const MainNav = styled.nav`
-  width: 1000px;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   a {
@@ -23,18 +23,35 @@ const MainNav = styled.nav`
     color: #fff;
     cursor: pointer;
   }
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const HomeWrapper = styled.div`
-  width: 40%;
+  width: 30%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  @media (max-width: 800px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const SecondaryWrap = styled.div`
   width: 40%;
   display: flex;
   justify-content: space-evenly;
+  @media (max-width: 800px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default function Navigation() {
@@ -63,7 +80,7 @@ export default function Navigation() {
               textDecoration: 'underline'
             }}
           >
-            Login <i className='fas fa-sign-in-alt' />
+            Login
           </NavLink>
 
           <NavLink
@@ -72,7 +89,7 @@ export default function Navigation() {
               textDecoration: 'underline'
             }}
           >
-            SignUp
+            Sign Up
           </NavLink>
         </SecondaryWrap>
       </MainNav>
