@@ -1,7 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import styled from "styled-components";
-import { fetch_start } from "../actions/index";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import { fetch_start } from '../actions/index';
+import { getContacts } from '../actions/contactActions';
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
   align-content: center;
 
   h1 {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
     margin: 3% 0%;
     text-transform: uppercase;
@@ -48,6 +49,12 @@ const RdmActs = styled.div`
 `;
 
 const Home = props => {
+  const { getContacts } = props;
+  useEffect(() => {
+    getContacts();
+    // eslint-disable-next-line
+  }, [getContacts]);
+
   const fetchAct = e => {
     e.preventDefault();
     props.fetch_start();
@@ -67,10 +74,11 @@ const Home = props => {
 const mstp = state => ({
   rdmActs: state.rdmActs,
   error: state.error,
-  isLoading: state.isloading
+  isLoading: state.isloading,
+  contact: state.contact
 });
 
 export default connect(
   mstp,
-  { fetch_start }
+  { fetch_start, getContacts }
 )(Home);
