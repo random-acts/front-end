@@ -73,6 +73,14 @@ export default function Navigation() {
           >
             Contacts
           </NavLink>
+          <NavLink
+            to='/acts'
+            activeStyle={{
+              textDecoration: 'underline'
+            }}
+          >
+            Acts
+          </NavLink>
 
           <NavLink
             to='/login'
