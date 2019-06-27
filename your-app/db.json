@@ -6,20 +6,20 @@
       "lastName": "Brudnak"
     },
     {
-      "id": 2,
-      "firstName": "Carlos",
-      "lastName": "Santana"
+      "firstName": "Noah",
+      "lastName": "Franco",
+      "id": 4
     },
     {
-      "firstName": "Josh",
-      "lastName": "Keslarrrrrrrr",
-      "id": 4
+      "firstName": "John",
+      "lastName": "Doe",
+      "id": 5
     }
   ],
   "acts": [
     {
       "id": 1,
-      "act": "Take them out to lunch"
+      "act": "Take them out to dinner"
     },
     {
       "id": 2,
