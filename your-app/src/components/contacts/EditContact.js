@@ -38,14 +38,16 @@ class EditContact extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.props.current);
+    console.log(this.props.current + 'From line 41');
     this.setState({
       user: this.props.current
     });
-    console.log(this.state.user);
+    console.log(this.state.user + 'Look here');
   }
 
   updateFormData = e => {
+    // console.log(e.target);
+    e.persist();
     this.setState(prevState => ({
       user: { ...prevState.user, [e.target.name]: e.target.value }
     }));
@@ -54,7 +56,7 @@ class EditContact extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.updateContact(this.state.user);
-    this.history.push('/contacts');
+    this.props.history.push('/contacts');
   };
   render() {
     return (
@@ -64,14 +66,14 @@ class EditContact extends React.Component {
             placeholder='First Name'
             name='firstName'
             value={this.state.user.firstName}
-            onChange={e => this.updateFormData(e)}
+            onChange={this.updateFormData}
             required
           />
           <input
             placeholder='Last Name'
             name='lastName'
             value={this.state.user.lastName}
-            onChange={e => this.updateFormData(e)}
+            onChange={this.updateFormData}
             required
           />
           <button>Add a contact</button>

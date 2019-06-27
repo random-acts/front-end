@@ -2,8 +2,8 @@
   "contacts": [
     {
       "id": 1,
-      "firstName": "Andrew",
-      "lastName": "Brudnak"
+      "firstName": "Devin is",
+      "lastName": "the Best!"
     },
     {
       "id": 2,
@@ -16,14 +16,9 @@
       "id": 4
     },
     {
-      "firstName": "Shelby",
-      "lastName": "Diamond",
+      "firstName": "Some",
+      "lastName": "guy",
       "id": 5
-    },
-    {
-      "firstName": "John",
-      "lastName": "Doe",
-      "id": 6
     }
   ],
   "acts": [
