@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { deleteAct, setCurrent } from '../../actions/actActions';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import { deleteAct, setCurrent } from "../../actions/actActions";
 
 const Card = styled.div`
   font-family: Arial, Helvetica, sans-serif;
@@ -27,21 +27,19 @@ const ActCard = props => {
   const { act, deleteAct, setCurrent } = props;
   const onDelete = () => {
     deleteAct(act.id);
-    alert('act deleted');
+    alert("act deleted");
   };
 
   const onClickHandle = act => {
     setCurrent(act);
-    props.history.push('/edit');
+    props.history.push("/edit");
   };
 
   return (
     <Card>
-      <p>
-        {act.act}
-        <button onClick={onDelete}>x</button>
-        <button onClick={e => onClickHandle(act)}>edit</button>
-      </p>
+      <p>{act.act}</p>
+      <button onClick={onDelete}>x</button>
+      <button onClick={e => onClickHandle(act)}>edit</button>
     </Card>
   );
 };
