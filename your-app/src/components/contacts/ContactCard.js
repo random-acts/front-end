@@ -6,7 +6,8 @@ import { deleteContact, setCurrent } from '../../actions/contactActions';
 const Card = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  background-color: #f2f7ff;
+  /* background-color: #f2f7ff; */
+  background-color: #fff;
   color: #222223;
   margin: 20px;
   width: 300px;

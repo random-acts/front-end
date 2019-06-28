@@ -19,20 +19,39 @@
       "firstName": "Noah",
       "lastName": "Franco",
       "id": 4
+    },
+    {
+      "firstName": "Russell",
+      "lastName": "James",
+      "id": 5
+    },
+    {
+      "firstName": "Marissa",
+      "lastName": "Garcia",
+      "id": 6
+    },
+    {
+      "firstName": "Sage",
+      "lastName": "Smith",
+      "id": 7
     }
   ],
   "acts": [
     {
-      "act": "Buy coffee",
+      "act": "Take them out to lunch",
       "id": 1
     },
     {
-      "act": "Say something nice",
+      "act": "Buy a cup of coffee",
       "id": 2
     },
     {
-      "act": "Offer help",
+      "act": "Say something nice",
       "id": 3
+    },
+    {
+      "act": "Offer some help",
+      "id": 4
     }
   ]
 }
