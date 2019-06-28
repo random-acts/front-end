@@ -18,6 +18,14 @@ const Card = styled.div`
     font-size: 1.2rem;
     margin-top: 6%;
   }
+  button {
+    border: unset;
+    background: lightgray;
+    border-radius: 15px;
+    padding: 13px;
+    margin: 15px;
+    color: black;
+  }
 `;
 
 const ActCard = props => {
