@@ -6,7 +6,7 @@ import { deleteContact, setCurrent } from '../../actions/contactActions';
 const Card = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  /* background-color: #f2f7ff; */
+  flex-direction: column;
   background-color: #fff;
   color: #222223;
   margin: 20px;
@@ -14,14 +14,41 @@ const Card = styled.div`
   padding: 14px;
   border-radius: 10px;
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
-  h3 {
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
   p {
     font-size: 1.2rem;
     margin-top: 6%;
+    text-align: center;
   }
+  button {
+    font-size: 1.6rem;
+    border: unset;
+    background: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  button:active {
+    box-shadow: unset;
+  }
+  button:focus {
+    outline: 0;
+  }
+
+  button:nth-of-type(1) {
+    color: #de0909;
+  }
+
+  button:nth-of-type(2) {
+    color: #3df72d;
+  }
+`;
+
+const Title = styled.div``;
+
+const ButtonWrap = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8%;
 `;
 
 const ContactCard = props => {
@@ -38,11 +65,19 @@ const ContactCard = props => {
 
   return (
     <Card>
-      <p>
-        {contact.firstName} {contact.lastName}
-        <button onClick={onDelete}>x</button>
-        <button onClick={e => onClickHandle(contact)}>edit</button>
-      </p>
+      <Title>
+        <p>
+          {contact.firstName} {contact.lastName}
+        </p>
+      </Title>
+      <ButtonWrap>
+        <button onClick={onDelete}>
+          <i className='fas fa-user-times' />
+        </button>
+        <button onClick={e => onClickHandle(contact)}>
+          <i className='fas fa-user-edit' />
+        </button>
+      </ButtonWrap>
     </Card>
   );
 };

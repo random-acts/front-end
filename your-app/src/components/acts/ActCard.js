@@ -35,11 +35,11 @@ const Card = styled.div`
   }
 
   button:nth-of-type(1) {
-    color: red;
+    color: #de0909;
   }
 
   button:nth-of-type(2) {
-    color: green;
+    color: #3df72d;
   }
 `;
 
