@@ -6,6 +6,7 @@ import { deleteAct, setCurrent } from "../../actions/actActions";
 const Card = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
+  flex-direction: column;
   background-color: #f2f7ff;
   color: #222223;
   margin: 20px;
@@ -13,10 +14,6 @@ const Card = styled.div`
   padding: 14px;
   border-radius: 10px;
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
-  h3 {
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
   p {
     font-size: 1.2rem;
     margin-top: 6%;
@@ -38,8 +35,11 @@ const ActCard = props => {
   return (
     <Card>
       <p>{act.act}</p>
-      <button onClick={onDelete}>x</button>
-      <button onClick={e => onClickHandle(act)}>edit</button>
+      <button onClick={onDelete}>
+        <i className="fas fa-folder-minus" />
+        Delete Act
+      </button>
+      <button onClick={e => onClickHandle(act)}>Edit</button>
     </Card>
   );
 };
