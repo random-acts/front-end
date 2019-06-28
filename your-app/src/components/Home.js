@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { fetch_start } from '../actions/index';
@@ -50,29 +50,40 @@ const RdmActs = styled.div`
 `;
 
 const Home = props => {
-  const { getContacts } = props;
+  const [conArr, setConArr] = useState([]);
+  const [actArr, setActArr] = useState([]);
+
+  const { getContacts, getActs } = props;
+
   useEffect(() => {
     getContacts();
-    // eslint-disable-next-line
-  }, [getContacts]);
-
-  const { getActs } = props;
-  useEffect(() => {
     getActs();
     // eslint-disable-next-line
-  }, [getActs]);
+  }, [getContacts, getActs]);
 
-  const fetchAct = e => {
-    e.preventDefault();
-    props.fetch_start();
+  const random = arr => {
+    let idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+  };
+  const handleClick = () => {
+    let theCons = props.contact.contacts;
+    let theActs = props.act.acts;
+    setConArr(theCons);
+    setActArr(theActs);
+    let randCon = random(conArr);
+    let randAct = random(actArr);
+    console.log(randCon);
+    console.log(randAct);
   };
 
   return (
     <Wrapper>
       <InnerWrapper>
         <h1>Random Acts</h1>
-        <RdmActs> {props.rdmActs} </RdmActs>
-        <button onClick={fetchAct}>Generate</button>
+        <RdmActs>
+          <p>Testing</p>
+        </RdmActs>
+        <button onClick={() => handleClick()}>Generate</button>
       </InnerWrapper>
     </Wrapper>
   );
@@ -82,7 +93,8 @@ const mstp = state => ({
   rdmActs: state.rdmActs,
   error: state.error,
   isLoading: state.isloading,
-  contact: state.contact
+  contact: state.contact,
+  act: state.act
 });
 
 export default connect(
